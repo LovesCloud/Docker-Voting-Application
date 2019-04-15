@@ -3,46 +3,6 @@ Docker-Voting-App
 
 A simple distributed application running across multiple Docker containers.
 
-## Linux Containers
-
-The Linux stack uses Python, Node.js, .NET Core (or optionally Java), with Redis for messaging and Postgres for storage.
-
-Run in this directory:
-
-```
-$ docker-compose up
-
-```
-The app will be running at [http://localhost:5000](http://localhost:5000), and the results will be at [http://localhost:5001](http://localhost:5001).
-
-
-
-Run the app in Kubernetes
--------------------------
-
-The folder k8s-specifications contains the yaml specifications of the Voting App's services.
-
-First create the vote namespace
-
-```
-$ kubectl create namespace vote
-```
-
-Run the following command to create the deployments and services objects:
-```
-$ kubectl create -f k8s-specifications/
-deployment "db" created
-service "db" created
-deployment "redis" created
-service "redis" created
-deployment "result" created
-service "result" created
-deployment "vote" created
-service "vote" created
-deployment "worker" created
-```
-
-The vote interface is then available on port 31000 on each host of the cluster, the result one is available on port 31001.
 
 Architecture
 -----
