@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: vote-<your-name>
-  namespace: vote-<your-name>
+  namespace: vote
 spec:
   replicas: 1
   template:
